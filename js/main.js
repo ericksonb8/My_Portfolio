@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+    const currentYearElement = document.querySelector('#current-year');
+    currentYearElement.textContent = new Date().getFullYear();
     $(window).scroll(function(){
         // sticky navbar on scroll script
         if(this.scrollY > 20){
@@ -44,15 +47,17 @@ $(document).ready(function(){
         loop: true
     });
 
-    var typed = new Typed(".typing-2", {
-        strings: [
-            "Desarrollador Web Full-Stack",
-            "Freelancer"
-        ],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
+    if( document.querySelector('.typing-2') ) {
+        var typed = new Typed(".typing-2", {
+            strings: [
+                "Desarrollador Web Full-Stack",
+                "Freelancer"
+            ],
+            typeSpeed: 100,
+            backSpeed: 60,
+            loop: true
+        });
+    }
 
     // owl carousel script
     $('.carousel').owlCarousel({

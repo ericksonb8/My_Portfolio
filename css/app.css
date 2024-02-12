@@ -9,7 +9,6 @@
 }
 html{
     scroll-behavior: smooth;
-    cursor: url(https://github.com/PulkitSinghDev/PulkitSinghDev.github.io/blob/main/hi-from-pulkit-removebg-preview.cur), auto;
 }
 
 /* custom scroll bar */
@@ -180,7 +179,6 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("https://yalantis.com/uploads/ckeditor/pictures/2916/dribble_perfect.gif") no-repeat center;
     background-color: rgb(35, 35, 35);
     height: 100vh;
     color: #fff;
@@ -263,6 +261,14 @@ section .title::after{
 .about .about-content .right a:hover{
     color: rgb(181, 18, 51);
     background: none;
+}
+
+span#green-mex{
+    color: #01684A;
+}
+
+span#white-mex{
+    color: #fff;
 }
 
 /* services section styling */
@@ -370,34 +376,104 @@ section .title::after{
     top: 0;
     background: rgb(181, 18, 51);
 }
-.skills-content .right .html::before{
-    width: 100%;
+
+/* SKILLS */
+.skills-section{
+    padding-top: 20px;
 }
-.skills-content .right .css::before{
-    width: 80%;
+
+.skills-header{
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
+    position: relative;
 }
-.skills-content .right .py::before{
-    width: 70%;
+
+.skills-header:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: #2ecc71;
+    border-radius: 2px;
 }
-.skills-content .right .cc::before{
-    width: 50%;
+
+.skills-container{
+    display: grid;
+    grid-tempLate-columns: repeat(5, 1fr);
+    justify-content:center;
+    align-items:center;
+    text-align: center;
+    grid-gap:1rem;
+    padding: 1rem 80px;
+    font-size: 1.2rem;
 }
-.skills-content .right .opensource::before{
-    width: 75%;
+
+.skills-box {
+    padding: 1rem;
+    color: #000;
+    cursor:pointer;
 }
-.skills-content .right .adpi::before{
-    width: 80%;
+
+.skills-box:hover > .skills-title: after, 
+.skills-box:hover > .skills-title: before {
+    width: 30px;
 }
-.skills-content .right .ai::before{
-    width: 25%;
+
+.skills-box:hover .skills-img{
+    transform: translateX(-20px);
 }
-.skills-content .right .bld::before{
-    width: 50%;
+
+.skills-title{
+display:flex;
+flex-direction: column;
+align-items:center;
+padding: 0.5rem;
+margin-bottom: 0.5rem;
+position: relative;
 }
+
+.skills-icons{
+width:50px;
+z-index:2;
+}
+
+.skills-img{
+width:90px;
+height:90px;
+position: relative;
+border-radius: 45px;
+background-color: rgba(35, 35, 35, 0.7);
+display:flex;
+justify-content:center;
+align-items:center;
+transition: .5s;
+}
+
+.skills-img:after{
+    content: '';
+    position:absolute;
+    top:0;
+    left: 0;
+    width:50%;
+    height:90px;
+    background: rgba(181, 18, 51, 0.9);
+    border-radius: 45px 0 0 45px;
+}
+.skills-title h3{
+color: #333;
+margin-top: 0.5rem;
+}
+
+
+
 
 /* teams section styling */
 .teams .title::after{
-    content: "what people says about him";
+    content: "Freelance";
 }
 .teams .carousel .card{
     background: #222;
@@ -589,7 +665,13 @@ footer span a:hover{
     .max-width{
         padding: 0 50px;
     }
+
+    .skills-container{
+    grid-tempLate-columns: repeat(3, 1fr);
+    padding: 2rem 50px;
+    }
 }
+
 @media (max-width: 947px){
     .menu-btn{
         display: block;
@@ -681,6 +763,11 @@ footer span a:hover{
     }
     .services .serv-content .card{
         width: 100%;
+    }
+
+    .skills-container{
+        grid-tempLate-columns: repeat(2, 1fr);
+        padding: 2rem 50px;
     }
 }
 
